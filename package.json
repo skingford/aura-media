@@ -1,12 +1,14 @@
 {
   "name": "aura-media",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.15.1",
   "private": true,
   "description": "本项目旨在开发一款集智能写作、多媒体内容生成及全平台发布于一体的 AI 自媒体创作平台。",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint"
+  },
   "directories": {
     "doc": "docs"
   },
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/skingford/aura-media/issues"
   },
-  "homepage": "https://github.com/skingford/aura-media#readme"
+  "homepage": "https://github.com/skingford/aura-media#readme",
+  "devDependencies": {
+    "turbo": "^2.7.2"
+  }
 }
