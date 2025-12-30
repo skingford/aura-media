@@ -27,14 +27,24 @@ cp -R $APP_DIR/.next/standalone/apps/$APP_NAME/.next $DIST_DIR/
 
 # Copy static assets (Next.js standalone doesn't include these by default)
 # Ensure .next/static exists
-mkdir -p $DIST_DIR/.next/static
-cp -R $APP_DIR/.next/static/* $DIST_DIR/.next/static/
+if [ -d "$APP_DIR/.next/static" ]; then
+  mkdir -p $DIST_DIR/.next/static
+  cp -R $APP_DIR/.next/static/* $DIST_DIR/.next/static/
+fi
 
-# Copy public assets (pnpm deploy might have copied source public, but we ensure build public is used)
-cp -R $APP_DIR/public/* $DIST_DIR/public/
+# Copy public folder if it exists
+if [ -d "$APP_DIR/public" ]; then
+  mkdir -p $DIST_DIR/public
+  cp -R $APP_DIR/public/* $DIST_DIR/public/ 2>/dev/null || true
+fi
 
-# Remove source files not needed for production
-rm -rf $DIST_DIR/src $DIST_DIR/tsconfig.json $DIST_DIR/next.config.ts
+# Remove source files and dev configs not needed for production
+rm -rf $DIST_DIR/src \
+       $DIST_DIR/tsconfig.json \
+       $DIST_DIR/next.config.ts \
+       $DIST_DIR/eslint.config.mjs \
+       $DIST_DIR/postcss.config.mjs \
+       $DIST_DIR/README.md
 
 # Create ecosystem.config.js for production
 cat > $DIST_DIR/ecosystem.config.js << EOL
