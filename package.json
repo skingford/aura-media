@@ -1,0 +1,24 @@
+{
+  "name": "aura-media",
+  "version": "1.0.0",
+  "private": true,
+  "description": "本项目旨在开发一款集智能写作、多媒体内容生成及全平台发布于一体的 AI 自媒体创作平台。",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skingford/aura-media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skingford/aura-media/issues"
+  },
+  "homepage": "https://github.com/skingford/aura-media#readme"
+}

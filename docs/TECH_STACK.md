@@ -2,7 +2,9 @@
 
 ## 1. 前端架构
 *   **运行时/包管理**: **Bun** (极速安装与运行，替代 Node.js/npm)
-*   **框架**: **React 19** + **Next.js 15** (App Router, React Server Components, Server Actions)
+*  采用 **monorepe**技术方案
+*  用户端**框架**: **React 19** + **Next.js 15** (App Router, React Server Components, Server Actions)
+*  管理后台采用 vite@8 + vue@3.5.26 + pinia
 *   **状态管理**: **Zustand** (轻量化状态同步) + **TanStack Query v5** (高效异步数据同步)
 *   **UI 组件库**: **Tailwind CSS v4** + **Shadcn UI** + **Magic UI** (更现代的动画与交互组件)
 *   **工具链**: **Biome** (高性能 Linter & Formatter，替代 ESLint/Prettier)
