@@ -75,11 +75,19 @@ module.exports = {
       },
       instances: 1,
       exec_mode: "cluster",
-      watch: false
+      watch: false,
+      log_date_format: "YYYY-MM-DD HH:mm:ss",
+      time: true,
+      merge_logs: true,
+      error_file: "./logs/error.log",
+      out_file: "./logs/out.log"
     }
   ]
 }
 EOL
+
+# Create logs directory
+mkdir -p "$DIST_DIR/logs"
 
 # Calculate and display package size
 DIST_SIZE=$(du -sh "$DIST_DIR" | cut -f1)
